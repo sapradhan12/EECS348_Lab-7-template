@@ -1,22 +1,7 @@
-#ifndef __LAB_H__
-#define __LAB_H__
+#ifndef FOOTBALL_H //if FOOTBALL_H is not defined, continue with the contents of the header file. start of conditional inclusion
+#define FOOTBALL_H //define FOOTBALL_H
 
-/* Do not modify the function signatures here */
+// Function prototype: Given an NFL score, print all combinations of scoring plays
+void find_combinations(int score); //declare a function "find_combinations" which takes in an integer "score" as input
 
-/**
- * @brief Return the number of possible combinations to add up to `points`
- * 
- * @param points
- * @return int 
- */
-int count_combinations(int points);
-
-/**
- * @brief Print a formatted table of all possible combinations that add up to
- * `points`
- * 
- * @param points
- */
-void print_combinations(int points);
-
-#endif /* __LAB_H__ */
+#endif  //end of conditional inclusion

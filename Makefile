@@ -1,7 +1,19 @@
-CC := gcc
+CC = gcc
 
-football.exe: # fill in files here
-	# fill in commands here
+CFLAGS = -Wall -Wextra -std=c11
 
-temperature.exe: # fill in files here
-	# fill in commands here
+TARGET = football
+
+OBJS = football_main.o football.o
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
+
+football_main.o: football_main.c football.h
+	$(CC) $(CFLAGS) -c football_main.c
+
+football.o: football.c football.h
+	$(CC) $(CFLAGS) -c football.c
+
+clean:
+	rm -f $(TARGET) $(OBJS)
