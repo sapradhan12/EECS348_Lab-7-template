@@ -17,3 +17,5 @@ football.o: football.c football.h
 
 clean:
 	rm -f $(TARGET) $(OBJS)
+
+#end

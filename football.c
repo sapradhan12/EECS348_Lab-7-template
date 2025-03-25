@@ -3,7 +3,7 @@
 
 void find_combinations(int score) { //defines the method find_combinations(), which takes in the integer parameter "score"
     printf("Possible combinations of scoring plays if a team's score is %d:\n", score);
-    int found = 0; //initializes the found flag to 0 (False)
+    int found = 0; //initializes the found flag to 0, which is False
     /*
     Here is what all of the letter variables mean:
     a: number of TD + 2-point conversion plays (8 points each)

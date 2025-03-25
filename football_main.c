@@ -2,7 +2,7 @@
 #include "football.h" //includes the header file
 
 int main() { //defines the main function
-    int score; //declares a variable "score" of type integer
+    int score; //declares a variable "score" of integer type
     printf("Enter 0 or 1 to STOP\n"); //prints to the terminal that the user can enter a 0 or 1 to stop the program
     
     while (1) { //a while True loop
