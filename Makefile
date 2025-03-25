@@ -1,13 +1,21 @@
+#Makefile for both C files
 CC = gcc
-
 CFLAGS = -Wall -Wextra -std=c11
 
-TARGET = football
+#football variablse
+FOOTBALL_TARGET = football
+FOOTBALL_OBJS = football_main.o football.o
 
-OBJS = football_main.o football.o
+#temperature variables
+TEMP_TARGET = temperature
+TEMP_OBJS = temperature_main.o temperature.o
 
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
+.PHONY: all clean
+all: $(FOOTBALL_TARGET) $(TEMP_TARGET)
+
+#football build rules
+$(FOOTBALL_TARGET): $(FOOTBALL_OBJS)
+	$(CC) $(CFLAGS) -o $(FOOTBALL_TARGET) $(FOOTBALL_OBJS)
 
 football_main.o: football_main.c football.h
 	$(CC) $(CFLAGS) -c football_main.c
@@ -15,7 +23,16 @@ football_main.o: football_main.c football.h
 football.o: football.c football.h
 	$(CC) $(CFLAGS) -c football.c
 
-clean:
-	rm -f $(TARGET) $(OBJS)
+#temperature build rules
+$(TEMP_TARGET): $(TEMP_OBJS)
+	$(CC) $(CFLAGS) -o $(TEMP_TARGET) $(TEMP_OBJS)
 
-#end
+temperature_main.o: temperature_main.c temperature.h
+	$(CC) $(CFLAGS) -c temperature_main.c
+
+temperature.o: temperature.c temperature.h
+	$(CC) $(CFLAGS) -c temperature.c
+
+#clean all files created
+clean:
+	rm -f $(FOOTBALL_TARGET) $(FOOTBALL_OBJS) $(TEMP_TARGET) $(TEMP_OBJS)
