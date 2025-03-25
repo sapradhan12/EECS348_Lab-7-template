@@ -4,6 +4,7 @@
 int count_combinations(int score) { //defines the method count_combinations(), which takes in the integer parameter "score"
     printf("Possible combinations of scoring plays if a team's score is %d:\n", score);
     int found = 0; //initializes the found flag to 0, which is False
+    int counter = 0; //initializes counter variable to 0
     /*
     Here is what all of the letter variables mean:
     a: number of TD + 2-point conversion plays (8 points each)
@@ -22,6 +23,7 @@ int count_combinations(int score) { //defines the method count_combinations(), w
                         if (total == score) { //if the total points are equal to the inputted score
                             printf("%d TD + 2pt, %d TD + FG, %d TD, %d 3pt FG, %d Safety\n", a, b, c, d, e); //print the combination of each type of play that achieves the score
                             found = 1; //update the found flag to 1 (i.e. True)
+                            counter++; //increments the counter by 1
                         } //end if statement checking the calculated total to the score
                     } //end Safety play for loop
                 } //end 3-point FG play for loop
@@ -32,5 +34,5 @@ int count_combinations(int score) { //defines the method count_combinations(), w
         printf("No combinations found.\n"); //print "No combinations found" to the termianl
     } //ends the if statement
 
-    return 0;
+    return counter; //returns the counter
 } //ends the count_combinations() method
