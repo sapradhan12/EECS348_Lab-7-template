@@ -1,7 +1,7 @@
 #include <stdio.h> //includes the standard input/output library
 #include "football.h" //includes the header file
 
-void find_combinations(int score) { //defines the method find_combinations(), which takes in the integer parameter "score"
+void count_combinations(int score) { //defines the method count_combinations(), which takes in the integer parameter "score"
     printf("Possible combinations of scoring plays if a team's score is %d:\n", score);
     int found = 0; //initializes the found flag to 0, which is False
     /*
@@ -31,4 +31,4 @@ void find_combinations(int score) { //defines the method find_combinations(), wh
     if (!found) { //if no possible combinations found (i.e. the found flag is still 0 (aka False))
         printf("No combinations found.\n"); //print "No combinations found" to the termianl
     } //ends the if statement
-} //ends the find_combinations() method
+} //ends the count_combinations() method

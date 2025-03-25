@@ -26,7 +26,7 @@ int main() { //defines the main function
             printf("Negative score is invalid. Please enter a score of 2 or greater.\n"); //lets the user know the error (that the score is negative) and tells them to print a valid score (a score that is 2 or greater)
             continue; //continues to the next iteration of the while loop
         } //end if statement
-        find_combinations(score); //passes in score variable into the find_combinations() method
+        count_combinations(score); //passes in score variable into the count_combinations() method
     } //end while loop
     return 0; //returns 0, signifying that the method ran correctly
 } //end main function
